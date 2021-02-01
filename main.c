@@ -79,28 +79,36 @@ int find(int value){
 int main(){
 
 	init();
+	int choice,value;
 	
-	addValue(11);
-	addValue(13);
-	addValue(12);
-	addValue(21);
-	addValue(131);
-	addValue(43);
-	addValue(399);
-	addValue(1);
-	addValue(25);
-	addValue(66);
-	addValue(76);
-	addValue(68);
-	addValue(69);
-	addValue(10);
-	addValue(58);
-	addValue(65);
-	addValue(5);
-	print();	
+	while(1){
 	
-	find(0);
+		printf("\n Taka a choise\n");
+		printf("1-) ADD A VALUE\n");
+		printf("2-) FIND A VALUE\n");
+		printf("3-) PRINT THE MAP\n");
 	
+		scanf("%d",&choice);
 	
+		switch(choice){
+			case 1:
+				printf("\nEnter the value:  ");
+				scanf("%d",&value);
+				addValue(value);
+				break;
+			
+			case 2:
+				printf("Enter the value:  ");
+				scanf("%d",&value);
+				find(value);
+				break;
+			
+			case 3: 
+				printf("\n");
+				print();
+				break;					
+		}
+	
+	}	
 return 0;
 }
