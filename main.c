@@ -53,7 +53,7 @@ void print(){
 			printf(" %d ==>",input->value);
 			input = input->next;
 		}
-		printf(" NULL\n");
+		printf(" NULL\n");printf("\n");
 	}
 		
 }
