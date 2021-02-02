@@ -58,7 +58,7 @@ void print(){
 		
 }
 
-int find(int value){
+int findValue(int value){
 	
 	int i = hash(value);
 	int x = 0;
@@ -75,6 +75,30 @@ int find(int value){
 	return 0;
 }
 
+void deleteValue(int value){
+	
+	int i = hash(value);
+	struct node* temp = array[i];
+	struct node* hold;
+	
+	if(array[i]->value == value){
+		array[i] = array[i]->next;
+		free(temp);
+		return;
+	}
+	
+	while(temp->next != NULL){
+		hold = temp->next;
+		if(hold->value == value){
+			temp->next = hold->next;
+			free(hold);
+			break;
+		}
+		temp = temp->next;
+	}
+	
+}	
+
 
 int main(){
 
@@ -87,6 +111,7 @@ int main(){
 		printf("1-) ADD A VALUE\n");
 		printf("2-) FIND A VALUE\n");
 		printf("3-) PRINT THE MAP\n");
+		printf("4-) DELETE A VALUE\n");
 	
 		scanf("%d",&choice);
 	
@@ -100,13 +125,18 @@ int main(){
 			case 2:
 				printf("Enter the value:  ");
 				scanf("%d",&value);
-				find(value);
+				findValue(value);
 				break;
 			
 			case 3: 
 				printf("\n");
 				print();
-				break;					
+				break;
+			
+			case 4:
+				printf("\nEnter the value you want to delete:  ");
+				scanf("%d",&value);
+				deleteValue(value);					
 		}
 	
 	}	
