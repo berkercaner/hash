@@ -59,15 +59,13 @@ void print(){
 int findValue(int value){
 	
 	int i = hash(value);
-	int x = 0;
 	struct node* temp = array[i];
 	while(temp != NULL){
 		if(temp->value == value){
-			printf("\n%d exists at (%d,array[%d])\n",value,x,i);
+			printf("\n%d exists at hash[%d]\n",value,i);
 			return 1;
 		}
 		temp = temp->next; 
-		x++;
 	}
 	printf("\n%d doesnt exist\n",value);
 	return 0;

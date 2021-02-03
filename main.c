@@ -9,7 +9,7 @@ int main(){
 	
 	while(1){
 	
-		printf("\n Taka a choise\n");
+		printf("\n------Make a choise-----\n");
 		printf("1-) ADD A VALUE\n");
 		printf("2-) FIND A VALUE\n");
 		printf("3-) PRINT THE MAP\n");
