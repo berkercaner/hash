@@ -7,7 +7,7 @@
 struct node;
 
 void init();
-int hash(int);
+int hashSC(int);
 void addValue(int);
 void print();
 int findValue(int);

@@ -16,7 +16,7 @@ void init(){
 		array[i] = NULL;
 }
 
-int hash(int value){
+int hashSC(int value){
 
 	return value % HASH_SIZE;
 }
@@ -27,7 +27,7 @@ void addValue(int value){
 	struct node* newNode = (struct node*) malloc(sizeof(struct node));
 	newNode->value = value;
 	newNode->next = NULL;
-	int i = hash(value);
+	int i = hashSC(value);
 	
 	if(array[i] == NULL)
 		array[i] = newNode;
@@ -58,7 +58,7 @@ void print(){
 
 int findValue(int value){
 	
-	int i = hash(value);
+	int i = hashSC(value);
 	struct node* temp = array[i];
 	while(temp != NULL){
 		if(temp->value == value){
@@ -73,7 +73,7 @@ int findValue(int value){
 
 void deleteValue(int value){
 	
-	int i = hash(value);
+	int i = hashSC(value);
 	struct node* temp = array[i];
 	struct node* holdFollowing;
 	
